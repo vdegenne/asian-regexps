@@ -1,0 +1,7 @@
+{
+  "name": "asian-regexps",
+  "version": "1.0.0",
+  "description": "chinese, japanese, korean regexps",
+  "keywords": ["regexp", "chinese", "korean", "japanese", "asia"],
+  "main": "asian-regexps.js"
+}
