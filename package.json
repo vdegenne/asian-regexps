@@ -1,7 +1,13 @@
 {
   "name": "asian-regexps",
-  "version": "1.0.0",
-  "description": "chinese, japanese, korean regexps",
-  "keywords": ["regexp", "chinese", "korean", "japanese", "asia"],
-  "main": "asian-regexps.js"
+  "version": "2.0.0",
+  "description": "Chinese, Japanese, Korean convenient RegExp ESM Node.js module",
+  "keywords": [
+    "regexp",
+    "chinese",
+    "korean",
+    "japanese",
+    "asia"
+  ],
+  "main": "asian-regexps.mjs"
 }
