@@ -1,13 +1,20 @@
 # asian-regexps
 
-Chinese, Japanese, Korean convenient RegExp ESM Node.js module
+Chinese, Japanese, Korean convenient RegExp package
 
 ## installation
 
-```yarn install asian-regexps```
+```npm i asian-regexps```
 
 ## usage
 
+### javascript
+```javascript
+const { isKorean } = require('asian-regexps')
+isKorean('한글') // true
+```
+
+### typescript
 ```javascript
 import { isKorean } from 'asian-regexps'
 isKorean('한글') // true
