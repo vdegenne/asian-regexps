@@ -1,3 +1,4 @@
+node_modules
 asian-regexps.d.ts
 asian-regexps.js
-asian-regexps.mjs
+dist
