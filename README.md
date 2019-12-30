@@ -15,7 +15,7 @@ isKorean('한글') // true
 ```
 
 ### ES6/ES2015 Modules AND TypeScript
-```javascript
+```typescript
 import { isKorean } from 'asian-regexps'
 isKorean('한글') // true
 ```
