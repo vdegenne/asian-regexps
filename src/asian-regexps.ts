@@ -2,13 +2,13 @@ export const chineseRegStringExp = '[\u4E00-\u9FCC\u3400-\u4DB5\uFA0E\uFA0F\uFA1
 export const japaneseRegStringExp = '[\u3000-\u303f\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]'
 export const koreanRegStringExp = '[\uac00-\ud7af]|[\u1100-\u11ff]|[\u3130-\u318f]|[\ua960-\ua97f]|[\ud7b0-\ud7ff]'
 
-export const chineseRegExp = new RegExp(`(${chineseRegStringExp}+)`)
-export const japaneseRegExp = new RegExp(`(${japaneseRegStringExp}+)`)
-export const koreanRegExp = new RegExp(`(${koreanRegStringExp}+)`)
+export const chineseRegExp = new RegExp(`(${chineseRegStringExp})+`)
+export const japaneseRegExp = new RegExp(`(${japaneseRegStringExp})+`)
+export const koreanRegExp = new RegExp(`(${koreanRegStringExp})+`)
 
-export const chineseFullRegExp = new RegExp(`^(${chineseRegStringExp}+)$`)
-export const japaneseFullRegExp = new RegExp(`^(${japaneseRegStringExp}+)$`)
-export const koreanFullRegExp = new RegExp(`^(${koreanRegStringExp}+)$`)
+export const chineseFullRegExp = new RegExp(`^(${chineseRegStringExp})+$`, 'g')
+export const japaneseFullRegExp = new RegExp(`^(${japaneseRegStringExp})+$`, 'g')
+export const koreanFullRegExp = new RegExp(`^(${koreanRegStringExp})+$`, 'g')
 
 export const isChinese = (input: string) => !!input.match(chineseRegExp)
 export const isJapanese = (input: string) => !!input.match(japaneseRegExp)
