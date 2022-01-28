@@ -1,7 +1,7 @@
 {
   "name": "asian-regexps",
   "description": "Chinese, Japanese, Korean convenient RegExp ESM Node.js module",
-  "version": "4.1.4",
+  "version": "4.3.0",
   "author": "Valentin Degenne <vdegenne@gmail.com>",
   "main": "asian-regexps.cjs",
   "module": "asian-regexps.js",

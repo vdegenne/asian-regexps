@@ -10,9 +10,9 @@ export const chineseFullRegExp = new RegExp(`^(${chineseRegStringExp})+$`, 'g')
 export const japaneseFullRegExp = new RegExp(`^(${japaneseRegStringExp})+$`, 'g')
 export const koreanFullRegExp = new RegExp(`^(${koreanRegStringExp})+$`, 'g')
 
-export const isChinese = (input: string) => !!input.match(chineseRegExp)
-export const isJapanese = (input: string) => !!input.match(japaneseRegExp)
-export const isKorean = (input: string) => !!input.match(koreanRegExp)
+export const hasChinese = (input: string) => !!input.match(chineseRegExp)
+export const hasJapanese = (input: string) => !!input.match(japaneseRegExp)
+export const hasKorean = (input: string) => !!input.match(koreanRegExp)
 
 export const isFullChinese = (input: string) => !!input.match(chineseFullRegExp)
 export const isFullJapanese = (input: string) => !!input.match(japaneseFullRegExp)

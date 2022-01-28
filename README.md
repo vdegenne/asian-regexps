@@ -10,21 +10,21 @@ Chinese, Japanese, Korean convenient RegExp npm package.
 
 ### CommonJS
 ```javascript
-const { isKorean } = require('asian-regexps')
-isKorean('한글') // true
+const { isFullKorean } = require('asian-regexps')
+isFullKorean('한글') // true
 ```
 
 ### ES6/ES2015 Modules AND TypeScript
 ```typescript
-import { isKorean } from 'asian-regexps'
-isKorean('한글') // true
+import { isFullKorean } from 'asian-regexps'
+isFullKorean('한글') // true
 ```
 
 ### Browser
 ```html
 <script type="module">
-  import { isKorean } from '/node_modules/asian-regexps/asian-regexps-esm.js'
-  isKorean('한글') // true
+  import { isFullKorean } from '/node_modules/asian-regexps/asian-regexps-esm.js'
+  isFullKorean('한글') // true
 </script>
 ```
 
@@ -32,11 +32,11 @@ isKorean('한글') // true
 
 ### functions
 
-- `isChinese(string)`
+- `hasChinese(string)`
 - `isFullChinese(string)`
-- `isJapanese(string)`
+- `hasJapanese(string)`
 - `isFullJapanese(string)`
-- `isKorean(string)`
+- `hasKorean(string)`
 - `isFullKorean(string)`
 
 ### regexps
