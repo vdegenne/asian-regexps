@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "es2022",
+		"moduleResolution": "node",
+		"rootDir": "src",
+		"outDir": ".",
+		"strict": true,
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		// "inlineSourceMap": true
+	},
+	"include": ["src/**/*"],
+	"exclude": []
+}

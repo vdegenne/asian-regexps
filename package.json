@@ -1,27 +1,59 @@
 {
-  "name": "asian-regexps",
-  "description": "Chinese, Japanese, Korean convenient RegExp ESM Node.js module",
-  "version": "4.3.0",
-  "author": "Valentin Degenne <vdegenne@gmail.com>",
-  "main": "asian-regexps.cjs",
-  "module": "asian-regexps.js",
-  "type": "module",
-  "keywords": [
-    "regexp",
-    "chinese",
-    "korean",
-    "japanese",
-    "asia"
-  ],
-  "devDependencies": {
-    "esbuild": "^0.14.13",
-    "typescript": "^4.5.5"
-  },
-  "scripts": {
-    "build": "npm run clean && npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc src/asian-regexps.ts --outDir . --declaration && mv ./asian-regexps.js ./asian-regexps.cjs",
-    "build:esm": "tsc src/asian-regexps.ts --outDir . --module esnext",
-    "clean": "rm -rf asian-regexps.js asian-regexps.d.ts"
-  },
-  "typings": "asian-regexps.d.ts"
+	"name": "asian-regexps",
+	"description": "Japanese-Chinese-Korean regexps",
+	"version": "5.0.0",
+	"author": "Valentin Degenne <vdegenne@gmail.com>",
+	"main": "index.js",
+	"module": "index.js",
+	"type": "module",
+	"scripts": {
+		"build": "wireit",
+		"test": "wireit"
+	},
+	"wireit": {
+		"build": {
+			"command": "tsc --pretty",
+			"clean": "if-file-deleted",
+			"files": [
+				"tsconfig.json",
+				"src"
+			],
+			"output": [
+				"index.d.ts",
+				"index.js",
+				"index.js.map",
+				"index.d.ts.map",
+				"test"
+			]
+		},
+		"test": {
+			"command": "mocha",
+			"dependencies": [
+				"build"
+			]
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vdegenne/asian-regexps.git"
+	},
+	"keywords": [
+		"regexp",
+		"chinese",
+		"korean",
+		"japanese",
+		"asia"
+	],
+	"files": [
+		"/index.js",
+		"/index.d.ts"
+	],
+	"devDependencies": {
+		"@esm-bundle/chai": "^4.3.4-fix.0",
+		"@types/mocha": "^10.0.1",
+		"mocha": "^10.2.0",
+		"typescript": "^5.0.4",
+		"wireit": "^0.9.5",
+		"xregexp": "^5.1.1"
+	}
 }

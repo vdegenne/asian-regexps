@@ -1,4 +1,8 @@
 node_modules
-asian-regexps.cjs
-asian-regexps.js
-asian-regexps.d.ts
+.wireit
+index.js
+index.js.map
+index.d.ts
+index.d.ts.map
+test
+!src/test
