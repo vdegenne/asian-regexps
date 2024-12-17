@@ -1,5 +1,5 @@
 import {assert} from '@esm-bundle/chai';
-import {containsChineseRegExp, isChineseCharacter, containsJapaneseRegExp, containsKoreanRegExp, isJapaneseCharacter, isKoreanCharacter, hasSomeChinese, isFullChinese, isKatakanaCharacter, isHiraganaCharacter, isKanjiCharacter, isFullHiragana, isFullKatakana, isFullJapanese} from '../index.js';
+import {hasSomeChinese, hasSomeHiragana, hasSomeKatakana, hiraganaStringRegex, isChineseCharacter, isFullChinese, isFullHiragana, isFullJapanese, isFullKatakana, isHiraganaCharacter, isJapaneseCharacter, isKanjiCharacter, isKatakanaCharacter} from '../index.js';
 
 describe('asian-regexps', () => {
 	describe('chinese', () => {
@@ -56,7 +56,10 @@ describe('asian-regexps', () => {
 				assert.equal(isKatakanaCharacter('A'), false);
 			});
 
-			it('has some katakana');
+			it('has some katakana', () => {
+				const input = 'testキtest';
+				assert.equal(hasSomeKatakana(input), true);
+			});
 		});
 
 		describe('Hiragana', () => {
@@ -74,7 +77,19 @@ describe('asian-regexps', () => {
 				assert.equal(isHiraganaCharacter('A'), false);
 			});
 
-			it('has some hiragana');
+			it('has some hiragana', () => {
+				const input = 'testいtest';
+				assert.equal(hasSomeHiragana(input), true);
+			});
+		});
+
+		describe('Misc', () => {
+			it('regexs can be used to extract characters', () => {
+				const input = 'testいtestあtest';
+				const regex = new RegExp(hiraganaStringRegex, 'g');
+				const match = input.match(regex);
+				assert.deepEqual(match, ['い', 'あ']);
+			});
 		});
 	});
 });
