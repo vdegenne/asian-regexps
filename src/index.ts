@@ -4,47 +4,47 @@
 /* string regexps */
 export const chineseRegStringExp = '[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〻㐀-䶿一-鿿豈-舘並-龎]';
 
-export const kanjiRegStringExp = '[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〻㐀-䶿一-鿿豈-舘並-龎]';
-export const hiraganaRegStringExp = '[ぁ-ゖゝ-ゟ]';
-export const katakanaRegStringExp = '[ァ-ヺヽ-ヿㇰ-ㇿ㋐-㋾㌀-㍗ｦ-ｯｱ-ﾝ]';
-export const japaneseRegStringExp = `${kanjiRegStringExp}|${hiraganaRegStringExp}|${katakanaRegStringExp}`;
+export const kanjiStringRegex = '[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〻㐀-䶿一-鿿豈-舘並-龎]';
+export const hiraganaStringRegex = '[ぁ-ゖゝ-ゟ]';
+export const katakanaStringRegex = '[ァ-ヺヽ-ヿㇰ-ㇿ㋐-㋾㌀-㍗ｦ-ｯｱ-ﾝ]';
+export const japaneseStringRegex = `${kanjiStringRegex}|${hiraganaStringRegex}|${katakanaStringRegex}`;
 
-export const koreanRegStringExp = '[\uac00-\ud7af]|[\u1100-\u11ff]|[\u3130-\u318f]|[\ua960-\ua97f]|[\ud7b0-\ud7ff]';
+export const koreanStringRegex = '[\uac00-\ud7af]|[\u1100-\u11ff]|[\u3130-\u318f]|[\ua960-\ua97f]|[\ud7b0-\ud7ff]';
 
 /* regexps */
 // contains
-export const containsChineseRegExp = new RegExp(`(${chineseRegStringExp})+`);
-export const containsJapaneseRegExp = new RegExp(`(${japaneseRegStringExp})+`);
-export const containsKanjiRegExp = new RegExp(`(${kanjiRegStringExp})+`);
-export const containsHiraganaRegExp = new RegExp(`(${hiraganaRegStringExp})+`);
-export const containsKatakanaRegExp = new RegExp(`(${katakanaRegStringExp})+`);
-export const containsKoreanRegExp = new RegExp(`(${koreanRegStringExp})+`);
+export const containsChineseRegex = new RegExp(chineseRegStringExp);
+export const containsJapaneseRegex = new RegExp(japaneseStringRegex);
+export const containsKanjiRegex = new RegExp(kanjiStringRegex);
+export const containsHiraganaRegex = new RegExp(hiraganaStringRegex);
+export const containsKatakanaRegex = new RegExp(katakanaStringRegex);
+export const containsKoreanRegex = new RegExp(koreanStringRegex);
 // all
-export const allChineseRegExp = new RegExp(`^(${chineseRegStringExp})+$`, 'g');
-export const allJapaneseRegExp = new RegExp(`^(${japaneseRegStringExp})+$`, 'g');
-export const allKanjiRegExp = new RegExp(`^(${kanjiRegStringExp})+$`, 'g');
-export const allHiraganaRegExp = new RegExp(`^(${hiraganaRegStringExp})+$`, 'g');
-export const allKatakanaRegExp = new RegExp(`^(${katakanaRegStringExp})+$`, 'g');
-export const allKoreanRegExp = new RegExp(`^(${koreanRegStringExp})+$`, 'g');
+export const allChineseRegex = new RegExp(`^(${chineseRegStringExp})+$`, 'g');
+export const allJapaneseRegex = new RegExp(`^(${japaneseStringRegex})+$`, 'g');
+export const allKanjiRegex = new RegExp(`^(${kanjiStringRegex})+$`, 'g');
+export const allHiraganaRegex = new RegExp(`^(${hiraganaStringRegex})+$`, 'g');
+export const allKatakanaRegex = new RegExp(`^(${katakanaStringRegex})+$`, 'g');
+export const allKoreanRegex = new RegExp(`^(${koreanStringRegex})+$`, 'g');
 
 /* has some */
 export function hasSomeChinese(input: string) {
-	return !!input.match(containsChineseRegExp);
+	return containsChineseRegex.test(input);
 }
 export function hasSomeJapanese(input: string) {
-	return !!input.match(containsJapaneseRegExp);
+	return containsJapaneseRegex.test(input);
 }
 export function hasSomeKanji(input: string) {
-	return !!input.match(containsKanjiRegExp);
+	return containsKanjiRegex.test(input);
 }
 export function hasSomeHiragana(input: string) {
-	return !!input.match(containsHiraganaRegExp);
+	return containsHiraganaRegex.test(input);
 }
 export function hasSomeKatakana(input: string) {
-	return !!input.match(containsKatakanaRegExp);
+	return containsKatakanaRegex.test(input);
 }
 export function hasSomeKorean(input: string) {
-	return !!input.match(containsKoreanRegExp);
+	return containsKoreanRegex.test(input);
 }
 
 /* is character (alias of "has some") */
@@ -64,25 +64,25 @@ export function isKatakanaCharacter(character: string) {
 	return hasSomeKatakana(character);
 }
 export function isKoreanCharacter(character: string) {
-	return !!character.match(containsKoreanRegExp);
+	return !!character.match(containsKoreanRegex);
 }
 
 /* full */
 export function isFullChinese(input: string) {
-	return !!input.match(allChineseRegExp);
+	return !!input.match(allChineseRegex);
 }
 export function isFullJapanese(input: string) {
-	return !!input.match(allJapaneseRegExp);
+	return !!input.match(allJapaneseRegex);
 }
 export function isFullKanji(input: string) {
-	return !!input.match(allKanjiRegExp);
+	return !!input.match(allKanjiRegex);
 }
 export function isFullHiragana(input: string) {
-	return !!input.match(allHiraganaRegExp);
+	return !!input.match(allHiraganaRegex);
 }
 export function isFullKatakana(input: string) {
-	return !!input.match(allKatakanaRegExp);
+	return !!input.match(allKatakanaRegex);
 }
 export function isFullKorean(input: string) {
-	return !!input.match(allKoreanRegExp);
+	return !!input.match(allKoreanRegex);
 }
