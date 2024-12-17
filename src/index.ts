@@ -20,12 +20,12 @@ export const containsHiraganaRegex = new RegExp(hiraganaStringRegex);
 export const containsKatakanaRegex = new RegExp(katakanaStringRegex);
 export const containsKoreanRegex = new RegExp(koreanStringRegex);
 // all
-export const allChineseRegex = new RegExp(`^${chineseRegStringExp}+$`, 'g');
-export const allJapaneseRegex = new RegExp(`^${japaneseStringRegex}+$`, 'g');
-export const allKanjiRegex = new RegExp(`^${kanjiStringRegex}+$`, 'g');
-export const allHiraganaRegex = new RegExp(`^${hiraganaStringRegex}+$`, 'g');
-export const allKatakanaRegex = new RegExp(`^${katakanaStringRegex}+$`, 'g');
-export const allKoreanRegex = new RegExp(`^${koreanStringRegex}+$`, 'g');
+export const allChineseRegex = new RegExp(`^${chineseRegStringExp}+$`);
+export const allJapaneseRegex = new RegExp(`^${japaneseStringRegex}+$`);
+export const allKanjiRegex = new RegExp(`^${kanjiStringRegex}+$`);
+export const allHiraganaRegex = new RegExp(`^${hiraganaStringRegex}+$`);
+export const allKatakanaRegex = new RegExp(`^${katakanaStringRegex}+$`);
+export const allKoreanRegex = new RegExp(`^${koreanStringRegex}+$`);
 
 /* has some */
 export function hasSomeChinese(input: string) {
